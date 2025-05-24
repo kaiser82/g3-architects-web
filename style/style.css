@@ -75,7 +75,8 @@ header{
     width: 100%;
 }
 .our-team{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     align-items: center;
     gap: 40px;
     padding: 61px;
@@ -89,15 +90,48 @@ header{
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
 }
+.group-img img{
+    width: 100%;
+}
 
 /* Media query for mobile device*/
-.navbar{
+@media screen and (max-width:576px) {
+    .navbar{
     display: flex;
     flex-direction: column;
+    }
+    .brand{
+        font-size: 2rem;
+    }
+    .banner-title{
+        font-size: 3rem;
+    }
+
+    .our-team{
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 20px;
+        padding: 10px;
+        }
+    .group-img{
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+        
+        }
+    .group-img img{
+        width: 100%;
+    }
 }
-.brand{
-    font-size: 2rem;
-}
-.banner-title{
-    font-size: 3rem;
+
+/* Media query for tablet */
+@media screen and (min-width:577px) and (max-width:990px) {
+
+    .our-team{
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 20px;
+        padding: 10px;
+        }
+    
 }
